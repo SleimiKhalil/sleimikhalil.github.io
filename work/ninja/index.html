@@ -25,7 +25,7 @@
 </head>
 <body>
 <br><br>
-<h1  align="center">pour commancer cliquer sur 'play'</h1>
+<h1  align="center">Click 'play' to start!</h1>
 <br><br>
 <table align="center" border="2">
 	<tr>
@@ -64,18 +64,10 @@
 
 <script   language="javascript">
 		
-	
-	
-// 			function shuffle(array) {
-//   array.sort(() => Math.random() - 0.5);
-// }
-
-// let arr = [1, 2, 3,4,5,6,7,8,9];
-// shuffle(arr);
 
 	$(document).ready(function(){
 
-		function alea(){ //fonction qui retourne un entier compris entre 0 et 8 de facon aleatoire
+		function alea(){ 
 			do{
 			var t=Math.floor(Math.random()*10-1);
 			}		
@@ -83,16 +75,16 @@
 			return t;	
 		};
 
-		var L,i=0; // L est un tableau contenant des valeurs aleatoires comprises entre 0 et 8(pour les 9 images)
+		var L,i=0; 
 	  	$("img").on("click",function(){
 	  		var c=Number($(this).attr('class'));
-	  	// alert(L[0],L[1],L[2]);
+	  
 	  		if(i>=3){
-	  			// $(this).attr("src","hidden.jpg");
-	  			alert("Jeu terminé! Cliquer sur 'play' pour essayer de nouveau.");
+	  			
+	  			alert("Click 'play' ha m3allem !");
 			}
 			else{
-				if(L[0]!=c && L[1]!=c && L[2]!=c){ //On choisit les trois premieres valeurs aléatoires
+				if(L[0]!=c && L[1]!=c && L[2]!=c){ 
 	     		$(this).attr("src","Ohoh!.png");
 	     		var res=Number($("#result").val())-1;
 	     		$("#result").val(res);
@@ -115,7 +107,7 @@
 			i = 0;
 			$("#result").val(0);
   			$("img").attr("src","hidden.jpg");
-  			function shuffle(array) {   //fonction qui permet de mélanger le tableau pour avoir des valeurs aleatoires
+  			function shuffle(array) {   
   				array.sort(() => Math.random() - 0.5);
   				return array;
 			}
