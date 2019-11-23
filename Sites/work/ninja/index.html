@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ninja Game</title>
+	<!-- <link rel="stylesheet" href="bbb.css"> -->	
+	<script src="jquery.js"></script>
+	<style>
+		body {
+			background-image: url("ninja3.png");
+      		background-repeat:no-repeat;
+       		background-size: 1370px 600px ;
+       		margin:0px auto;
+			heiht:100%;
+		} 
+		h1{
+			color:red;
+		}
+		img{
+			width:80px;
+			height: 80px;
+		}
+
+	</style>
+</head>
+<body>
+<br><br>
+<h1  align="center">pour commancer cliquer sur 'play'</h1>
+<br><br>
+<table align="center" border="2">
+	<tr>
+		<td  class=""><img  class="1" alt=""></td>
+		<td  class=""><img  class="2" alt=""></td>
+		<td  class=""><img   class="3"alt=""></td>
+
+
+	</tr>
+	<tr>
+		<td class=""><img   class="4"alt=""></td>
+		<td class=""><img   class="5"alt=""></td>
+		<td class=""><img   class="6"alt=""></td>
+
+	</tr>
+	<tr>
+		<td class=""><img   class="7"alt=""></td>
+		<td class=""><img   class="8"alt=""></td>
+		<td class=""><img   class="9"alt=""></td>
+
+	</tr>
+</table>
+<br><br>
+<div align="center">
+	<tr>
+		<td>
+			<input type="button"  class="start" value="play">
+		</td>
+		<td>
+			<label for=""><u>Score</u></label>
+			<input id="result" type="text" value="0" size="3">
+		</td>
+	</tr>
+</div>
+</body>
+
+<script   language="javascript">
+		
+	
+	
+// 			function shuffle(array) {
+//   array.sort(() => Math.random() - 0.5);
+// }
+
+// let arr = [1, 2, 3,4,5,6,7,8,9];
+// shuffle(arr);
+
+	$(document).ready(function(){
+
+		function alea(){ //fonction qui retourne un entier compris entre 0 et 8 de facon aleatoire
+			do{
+			var t=Math.floor(Math.random()*10-1);
+			}		
+			while(t==-1);
+			return t;	
+		};
+
+		var L,i=0; // L est un tableau contenant des valeurs aleatoires comprises entre 0 et 8(pour les 9 images)
+	  	$("img").on("click",function(){
+	  		var c=Number($(this).attr('class'));
+	  	// alert(L[0],L[1],L[2]);
+	  		if(i>=3){
+	  			// $(this).attr("src","hidden.jpg");
+	  			alert("Jeu terminé! Cliquer sur 'play' pour essayer de nouveau.");
+			}
+			else{
+				if(L[0]!=c && L[1]!=c && L[2]!=c){ //On choisit les trois premieres valeurs aléatoires
+	     		$(this).attr("src","Ohoh!.png");
+	     		var res=Number($("#result").val())-1;
+	     		$("#result").val(res);
+	     		
+	     		}
+		  		else{
+		  	    	$(this).attr("src","Yes!.jpg");
+		  	    	var res=Number($("#result").val())+2;
+		     		$("#result").val(res);
+		     		i++;
+		     		
+		  		}
+			}
+	    	
+
+		})
+
+
+		$(".start").click(function(){
+			i = 0;
+			$("#result").val(0);
+  			$("img").attr("src","hidden.jpg");
+  			function shuffle(array) {   //fonction qui permet de mélanger le tableau pour avoir des valeurs aleatoires
+  				array.sort(() => Math.random() - 0.5);
+  				return array;
+			}
+			let arr = [1, 2, 3,4,5,6,7,8,9];
+			L=shuffle(arr);
+		});
+
+	});
+
+	</script>
+</html>

@@ -1,0 +1,227 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Khalil SLEIMI - Personal Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/fonts/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+		<div class="app-fixed__line"></div>
+		<!-- Frame-1 -->
+		<section class="frame-wrapper ptb-100">
+			<div class="two-column-grid__fluid">
+				<div class="grid-item">
+					<div class="normal-grid__column mb-25">
+						<h4 class="fade-up">Hello</h2>
+							<div class="line-helper fade-up"></div>
+					</div>
+					<div class="mb-25">
+						<h1 class="fade-up"><span>I am</span> Khalil SLEIMI</h1>
+					</div>
+					<div class="mb-25">
+						<h5 class="fade-up">Projects and Work-Showcasing</h4>
+					</div>
+					<div class="fade-up">
+						<a href="index.html" ><button class="secondary-btn">Me</button></a>
+						<button class="primary-btn mr-15">My Projects</button>
+					</div>
+					<div class="highlighter-container fade-up">
+						<h1 class="highlighter">Khalil SLEIMI</h1>
+						<div class="box-highlighter"></div>
+					</div>
+				</div>
+				<div class="grid-item image-container fade-up">
+					<img class="header-image" src="assets/images/developer.svg" alt="image" />
+				</div>
+			</div>
+		</section>
+		
+<section class="normal-grid__row mb-100">
+	<div class="normal-grid__row app__header">
+	<p>Click the button to get your coordinates.</p>
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+    
+function showPosition(position) {
+    x.innerHTML="Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+</div>
+</section>
+		<!-- Heading -->
+		<section class="normal-grid__row mb-100">
+			<div class="normal-grid__row app__header">
+				<h2 class="mb-20 fade-up">What is this?</h2>
+				<p class="fade-up">These are some of the projects that I have done during the Web Development course. Though I am still a beginner, so feel free to give any advice. <br>It'll be welcome. <a href="./work"> Here's the link </a></p>
+			</div>
+
+			<div class="hlp-line"></div>
+		</section>
+
+		<!-- Frame-3 -->
+		<section class="frame-wrapper animate-fadeup">
+			<div class="two-column-grid__fixed--reverse">
+				<div class="grid-item">
+					<div class="mb-25">
+						<h3 class="txt-align__right">Calculatrice</h3>
+					</div>
+					<a href="./work/calc/index.html"> <p class="txt-justify mb-10">This is the Calculatrice work.</p></a>
+						</div>
+				<div class="grid-item image-container">
+					<img class="max-limit" src="assets/images/calc.svg" alt="image" />
+				</div>
+			</div>
+		</section>
+
+		<!-- Arrow -->
+		<section class="frame-wrapper animate-fadeup">
+			<div class="arrow-grid">
+				<img class="big-arrow" src="assets/images/leftarrow.svg" />
+				<img class="small-arrow" src="assets/images/straightarrow.svg" />
+			</div>
+		</section>
+
+		<!-- Frame-4 -->
+		<section class="frame-wrapper mb-50 animate-fadeup">
+			<div class="two-column-grid__fixed">
+				<div class="grid-item image-container">
+					<img class="max-limit" src="assets/images/Capture.jpg" alt="image" />
+				</div>
+				<div class="grid-item">
+					<div class="mb-25">
+						<h3>Repas</h3>
+					</div>
+					<a href="work/repas/index.html" ><p class="mb-10">This is the Repas Work.</p></a>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Arrow -->
+		<section class="frame-wrapper animate-fadeup">
+			<div class="arrow-grid">
+				<img class="big-arrow" src="assets/images/rightarrow.svg" />
+				<img class="small-arrow" src="assets/images/straightarrow.svg" />
+			</div>
+		</section>
+
+		<!-- Frame-5 -->
+		<section class="frame-wrapper animate-fadeup">
+			<div class="two-column-grid__fixed--reverse">
+				<div class="grid-item">
+					<div class="mb-25">
+						<h3 class="txt-align__right">Ninja</h3>
+					</div>
+					<a href=".\work\ninja\index.html"> <p class="txt-justify mb-10">This is the Ninja Work.</p></a>
+					</div>
+				<div class="grid-item image-container">
+					<img class="max-limit" src="assets/images/Ninja-oath.jpg" alt="image" />
+				</div>
+			</div>
+		</section>
+
+		<!-- Arrow -->
+		<!-- Arrow -->
+		<section class="frame-wrapper animate-fadeup">
+			<div class="arrow-grid">
+				<img class="big-arrow" src="assets/images/leftarrow.svg" />
+				<img class="small-arrow" src="assets/images/straightarrow.svg" />
+			</div>
+		</section>
+		
+		<section class="frame-wrapper mb-50 animate-fadeup">
+			<div class="two-column-grid__fixed">
+				<div class="grid-item image-container">
+					<img class="max-limit" src="assets/images/contact-form-screenshot.png" alt="image" />
+				</div>
+				<div class="grid-item">
+					<div class="mb-25">
+						<h3>Contact Form</h3>
+					</div>
+					<a href="work/contact/index.html" ><p class="mb-10">This is the Contact Form Work.</p></a>
+					
+				</div>
+			</div>
+		</section>
+		<section class="frame-wrapper animate-fadeup">
+			<div class="arrow-grid">
+				<img class="big-arrow" src="assets/images/rightarrow.svg" />
+				<img class="small-arrow" src="assets/images/straightarrow.svg" />
+			</div>
+		</section>
+
+		<!-- Frame-5 -->
+		<section class="frame-wrapper animate-fadeup">
+			<div class="two-column-grid__fixed--reverse">
+				<div class="grid-item">
+					<div class="mb-25">
+						<h3 class="txt-align__right">My CV</h3>
+					</div>
+					<a href=".\work\CV-Khalil\index.html"> <p class="txt-justify mb-10">This is my CV.</p></a>
+					</div>
+				<div class="grid-item image-container">
+					<img class="max-limit" src="assets/images/cv.jpg" alt="image" />
+				</div>
+			</div>
+		</section>
+		<section class="frame-wrapper animate-fadeup">
+			<div class="arrow-grid">
+				<img class="big-arrow" src="assets/images/leftarrow.svg" />
+				<img class="small-arrow" src="assets/images/straightarrow.svg" />
+			</div>
+		</section>
+		
+		<section class="frame-wrapper mb-50 animate-fadeup">
+			<div class="two-column-grid__fixed">
+				<div class="grid-item image-container">
+					<img class="max-limit" src="assets/images/images.jpg" alt="image" />
+				</div>
+				<div class="grid-item">
+					<div class="mb-25">
+						<h3>Exercices: </h3>
+					</div>
+					<a href="work\Série HTML 7exercices\index.html" ><p class="mb-10">This is the link to the first Batch of 7 exercices: All in JavaScript .</p></a>
+					<a href="work\HTML5-CSS3-jQuery Exercices\index.html" ><p class="mb-10">This is the link to the other 16 exercices: .</p></a>
+					
+				</div>
+			</div>
+		</section>
+		
+
+		
+
+		<footer class="animate-fadeup">
+			<section class="footer-details">
+				<h3 class="footer-header">Follow Me</h3>
+				<ul class="footer-following">
+					<li class="following-item"><a href="" title="linkedin"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+					<li class="following-item"><a href="" title="github"><i class="fa fa-github-square" aria-hidden="true"></i></a></li>
+					<li class="following-item"><a href="" title="medium"><i class="fa fa-medium" aria-hidden="true"></i></a></li>
+					<li class="following-item"><a href="" title="codepen"><i class="fa fa-codepen" aria-hidden="true"></i></a></li>
+					<li class="following-item"><a href="" title="facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+				</ul>
+				<div class="developed-by">Copyright ©2019 All rights reserved @KhalilSLEIMI-aka-CrazyDEVELOPER</div>
+			</section>
+		</footer>
+
+		<!-- Scripts -->
+		<script src="assets/js/animate.js"></script>
+	</body>
+</html>

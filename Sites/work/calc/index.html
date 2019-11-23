@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculatrice</title>
+	<style>
+		body {
+			background-image: url("Best-Scientific-Calculator.jpg");
+      		background-repeat:no-repeat;
+       		background-size: 1370px 600px ;
+		} 
+
+	</style>
+	<script language="JavaScript">
+		var test1 = false; //variable booleenne qui indique si on a tapé = ou non
+		//var taille = document.calc.result.value.length;
+		function insertNum(n){
+			if (test1===false){
+				calc.result.value = n;
+				test1=true;
+			}
+			else{
+				calc.result.value += n;
+			}
+		}
+		function insertOp(p){
+			var taille = calc.result.value.length;
+			
+			if(calc.result.value===""){}
+			else if(calc.result.value.charAt(taille-1)==='+' || calc.result.value.charAt(taille-1)==='-' || calc.result.value.charAt(taille-1)==='*' || calc.result.value.charAt(taille-1)==='/'){}
+			else{
+				calc.result.value += p;
+				test1=true;
+	}
+		}
+		function calcarre(){
+
+			var taille = calc.result.value.length;
+			if(calc.result.value===""){}
+			else if(calc.result.value.charAt(taille-1)==='+' || calc.result.value.charAt(taille-1)==='-' || calc.result.value.charAt(taille-1)==='*' || calc.result.value.charAt(taille-1)==='/'){}
+			else{
+				var x = eval(calc.result.value);
+				calc.result.value = x*x;
+				test1=false;
+			}
+		}
+		function calculer(){
+			if(calc.result.value===""){$('#client.frm').trigger("reset");}
+			 var taille = calc.result.value.length;
+			 if (calc.result.value.charAt(taille-2)==='/' && calc.result.value.charAt(taille-1)==='0'){	  alert("Division par 0 !!!"); }
+			calc.result.value = eval(calc.result.value);
+			test1=false;
+		}
+	</script>
+</head>
+<body>
+	<h2><u>Calculatrice Classique</u></h2>
+      <form name="calc">
+         <table border=2>
+            <tr>
+               <td colspan="3">
+                  <input type="text" name="result" id="result" disabled>
+               </td>
+               <td><input type="button" name="egal" value="=" onclick="calculer()"></td>
+            </tr>
+            <tr>
+               <td><input type="button" name="un" value="1" onclick="insertNum('1')"></td>
+               <td><input type="button" name="deux" value="2" onclick="insertNum('2')"></td>
+               <td><input type="button" name="trois" value="3" onclick="insertNum('3')"></td>
+               <td><input type="button" class="operator" name="plus" value="+" onclick="insertOp('+')"></td>
+            </tr>
+            <tr>
+               <td><input type="button" name="quatre" value="4" onclick="insertNum('4')"></td>
+               <td><input type="button" name="cinq" value="5" onclick="insertNum('5')"></td>
+               <td><input type="button" name="six" value="6" onclick="insertNum('6')"></td>
+               <td><input type="button" class="operator" name="minus" value="- " onclick="insertOp('-')"></td>
+            </tr>
+            <tr>
+               <td><input type="button" name="sept" value="7" onclick="insertNum('7')"></td>
+               <td><input type="button" name="huit" value="8" onclick="insertNum('8')"></td>
+               <td><input type="button" name="neuf" value="9" onclick="insertNum('9')"></td>
+               <td><input type="button" class="operator" name="times" value="x" onclick="insertOp('*')"></td>
+            </tr>
+            <tr>
+               <td><input type="reset" id="reset" name="reset" value="C" ></td>
+               <td><input type="button" name="zero" value="0" onclick="insertNum('0')"></td>
+               <td><input type="button" name="carre" value="X^2" onclick="calcarre()"></td>
+               <td><input type="button" class="operator" name="div" value="/ " onclick="insertOp('/')"></td>
+            </tr>
+         </table>
+      </form>
+   </body>
+</html>
