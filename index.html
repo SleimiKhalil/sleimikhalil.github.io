@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Khalil SLEIMI - Personal Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/fonts/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script type="text/javascript">
+			function showPosition(position) {
+    console.log("Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude)
+}
+function showError(error) {
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation.";
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable.";
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out.";
+            break;
+        case error.UNKNOWN_ERR:
+            x.innerHTML = "An unknown error occurred.";
+            break;
+    }
+}
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition)
+} else {
+    console.log("Geolocation API doesn't supported.")
+}
+		</script>
+	</head>
+	<body>
+		<div class="app-fixed__line"></div>
+		<!-- Frame-1 -->
+		<section class="frame-wrapper ptb-100">
+			<div class="two-column-grid__fluid">
+				<div class="grid-item">
+					<div class="normal-grid__column mb-25">
+						<h4 class="fade-up">Hello</h2>
+							<div class="line-helper fade-up"></div>
+					</div>
+					<div class="mb-25">
+						<h1 class="fade-up"><span>I am</span> Khalil SLEIMI</h1>
+					</div>
+					<div class="mb-25">
+						<h5 class="fade-up">Origins and Discovery</h4>
+					</div>
+					<div class="fade-up">
+						<button class="primary-btn mr-15">Me</button>
+						<a href="secondary.html" ><button class="secondary-btn">My Projects</button></a>
+					</div>
+					<div class="highlighter-container fade-up">
+						<h1 class="highlighter">Khalil SLEIMI</h1>
+						<div class="box-highlighter"></div>
+					</div>
+				</div>
+				<div class="grid-item image-container fade-up">
+					<img class="header-image" src="assets/images/developer.svg" alt="image" />
+				</div>
+			</div>
+		</section>
+
+		<!-- Heading -->
+		<section class="normal-grid__row mb-100">
+			<div class="normal-grid__row app__header">
+				<h2 class="mb-20 fade-up">Who am I?</h2>
+				<p class="fade-up">I am Khalil SLEIMI, a Computer Science Student in ENIT. I am hugely in love with so many open-source projects and hopes to one day contribute something meaningful - or who knows, maybe create my own open-source project!</p>
+			</div>
+			<div class="hlp-line fade-up"></div>
+		</section>
+				<style type="text/css">
+    html, body {
+        margin: 0;
+    }
+    #map {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+</style>
+<div id="map"></div>
+<script>
+    function initMap() {
+        var officePos = {lat: 50.438284, lng: 30.515339};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 17,
+            center: officePos
+        });
+        var markerOffice = new google.maps.Marker({
+            position: officePos,
+            map: map,
+            label: 'A'
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap&quot; async defer></script>
+<style type="text/css">
+    html, body {
+        margin: 0;
+    }
+    #map {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+</style>
+<div id="map"></div>
+<script>
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 3,
+            center: {lat: 0, lng: 0}
+        });
+    }
+</script>
+<script>
+function showPosition(position) {
+    console.log("Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude)
+}
+function showError(error) {
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation.";
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable.";
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out.";
+            break;
+        case error.UNKNOWN_ERR:
+            x.innerHTML = "An unknown error occurred.";
+            break;
+    }
+}
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition)
+} else {
+    console.log("Geolocation API doesn't supported.")
+}
+</script>
+<style type="text/css">
+    html, body {
+        margin: 0;
+    }
+    #map {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+</style>
+<div id="map"></div>
+<script>
+    function initMap() {
+        var bounds = new google.maps.LatLngBounds();
+        var officePos = {lat: 50.438284, lng: 30.515339};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: officePos
+        });
+        var markerOffice = new google.maps.Marker({
+            position: officePos,
+            map: map,
+            label: 'A'
+        });
+        bounds.extend(markerOffice.position);
+
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                var currentPos = {lat: position.coords.latitude, lng: position.coords.longitude};
+                var markerCurreintPos = new google.maps.Marker({
+                    position: currentPos,
+                    map: map,
+                    label: 'B'
+                });
+                bounds.extend(markerCurreintPos.position);
+                map.fitBounds(bounds);
+                map.panToBounds(bounds);
+            }
+        )
+    }
+</script>
+
+
+
+		<!-- Frame-2 -->
+		<section class="frame-wrapper mb-50">
+			<div class="two-column-grid__fixed">
+				<div class="grid-item image-container animate-fadeup">
+					<img src="assets/images/profile.svg" alt="image" />
+				</div>
+				<div class="grid-item">
+					<div class="mb-25">
+						<!-- <h3>Let’s</h3> -->
+						<!-- <h3>Introduce About</h3> -->
+						<h3 class="animate-fadeup">Myself</h3>
+					</div>
+					<p class="mb-10 animate-fadeup">I am passionate about everything that's related to Computer-Science. Because I love what I do, I have a steady source of motivation that drives me to do my best. </p>
+					<p class="animate-fadeup">In my last internship, this passion led me to challenge myself daily and learn new skills that helped me do better work. For example, I taught myself how to use LAMP and develop a PHP-MySQL (HTML - CSS) dashboard to improve the efficiency of our data storage and retrieval within Tunisie Telecom. I am kinda the go-to person for any design needs.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Frame-3 -->
+		<section class="frame-wrapper mb-100">
+			<div class="two-column-grid__fluid">
+				<div class="grid-item centered wrap-grid animate-fadeup">
+					<div class="stack-card" title="HTML5">
+						<img src="assets/images/html5.svg" />
+					</div>
+					<div class="stack-card" title="CSS3">
+						<img src="assets/images/css.svg" />
+					</div>
+					<div class="stack-card" title="PHP">
+						<img src="assets/images/php.svg" />
+					</div>
+					<div class="stack-card" title="Javascript">
+						<img src="assets/images/javascript.svg" />
+					</div>
+					<div class="stack-card" title="MariaDB">
+						<img src="assets/images/mariadb.png" />
+					</div>
+					<div class="stack-card" title="Python">
+						<img src="assets/images/python.svg" />
+					</div>
+					<div class="stack-card" title="Linux">
+						<img src="assets/images/linux.png" />
+					</div>
+					<div class="stack-card" title="Github">
+						<img src="assets/images/github.svg" />
+					</div>
+					<div class="stack-card" title="C++">
+						<img src="assets/images/c++.png" />
+					</div>
+				</div>
+				<div class="grid-item fixed-grid__column animate-fadeup">
+					<div class="fixed-grid__row recognising-text mb-60">
+						<div class="dashed-box"></div>
+						<div class="fixed-grid__row wrkng-txt">
+							<h1 class="primary-highlight__txt mr-45">3<span class="extra">+</span></h1>
+							<div class="fixed-grid__column align-left">
+								<p class="secondary-highlight__txt">Months</p>
+								<p class="secondary-highlight__txt">Working</p>
+								<p class="secondary-highlight__txt">Experience </p>
+							</div>
+						</div>
+					</div>
+					<div class="fixed-grid__row recognising-text">
+						<div class="call-icon mr-20">
+							<img src="assets/images/call.png" />
+						</div>
+						<div class="fixed-grid__column align-left">
+							<h5 class="call-txt__header mb-5">Call Me Now</h5>
+							<h3 class="call-txt">(+216)-22-810-509</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Heading -->
+		<section class="normal-grid__row mb-100 animate-fadeup">
+			<div class="normal-grid__row app__header">
+				<h2 class="mb-20">See My Journey</h2>
+				<p>In Here, I will discuss my Journey of how I came to be here.</p>
+			</div>
+			<div class="hlp-line"></div>
+		</section>
+
+		<!-- Frame-3 -->
+		<section class="frame-wrapper animate-fadeup">
+			<div class="two-column-grid__fixed--reverse">
+				<div class="grid-item">
+					<div class="mb-25">
+						<h3 class="txt-align__right">Schooling</h3>
+					</div>
+					<p class="txt-justify mb-10">I studied the first 5 years in Bourguiba Avenue Primary School, Tabarka.</p>
+					<p class="txt-justify">After that, I studied 1 year in Abou Alkassem Alchebby, Cité Mrad, Sidi Hassine. And Continued my MidSchool and later HighSchool in Ezzahrouni's mid-school and high-school.</p>
+				</div>
+				<div class="grid-item image-container">
+					<img class="max-limit" src="assets/images/school.svg" alt="image" />
+				</div>
+			</div>
+		</section>
+
+		<!-- Arrow -->
+		<section class="frame-wrapper animate-fadeup">
+			<div class="arrow-grid">
+				<img class="big-arrow" src="assets/images/leftarrow.svg" />
+				<img class="small-arrow" src="assets/images/straightarrow.svg" />
+			</div>
+		</section>
+
+		<!-- Frame-4 -->
+		<section class="frame-wrapper mb-50 animate-fadeup">
+			<div class="two-column-grid__fixed">
+				<div class="grid-item image-container">
+					<img class="max-limit" src="assets/images/graduation.svg" alt="image" />
+				</div>
+				<div class="grid-item">
+					<div class="mb-25">
+						<h3>University</h3>
+					</div>
+					<p class="mb-10">Then, I studied in El Manar Preparatory School, MP branch.</p>
+					<p>And now I am studying in the National School of Engineering in Tunis (ENIT).</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Arrow -->
+		<section class="frame-wrapper animate-fadeup">
+			<div class="arrow-grid">
+				<img class="big-arrow" src="assets/images/rightarrow.svg" />
+				<img class="small-arrow" src="assets/images/straightarrow.svg" />
+			</div>
+		</section>
+
+		<!-- Frame-5 -->
+		<section class="frame-wrapper animate-fadeup">
+			<div class="two-column-grid__fixed--reverse">
+				<div class="grid-item">
+					<div class="mb-25">
+						<h3 class="txt-align__right">Internships</h3>
+					</div>
+					<p class="txt-justify mb-10">"Designed and Implemented a Fiber Optics' Stock Management Application within Tunisie Telecom".</p>
+					<p class="txt-justify">Beyond that, I have some freelancing experience - Design of a 16-bit Computer from the ground up to match a certain assembly language (Not much really, but I really enjoyed it!).<br> Can't wait to join the work force.</p>
+				</div>
+				<div class="grid-item image-container">
+					<img class="max-limit" src="assets/images/freelancer.svg" alt="image" />
+				</div>
+			</div>
+		</section>
+
+		<!-- Arrow -->
+		
+
+
+		
+		<footer class="animate-fadeup">
+			<section class="footer-details">
+				<h3 class="footer-header">Follow Me</h3>
+				<ul class="footer-following">
+					<li class="following-item"><a href="" title="linkedin"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+					<li class="following-item"><a href="" title="github"><i class="fa fa-github-square" aria-hidden="true"></i></a></li>
+					<li class="following-item"><a href="" title="medium"><i class="fa fa-medium" aria-hidden="true"></i></a></li>
+					<li class="following-item"><a href="" title="codepen"><i class="fa fa-codepen" aria-hidden="true"></i></a></li>
+					<li class="following-item"><a href="" title="facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+				</ul>
+				<div class="developed-by">Copyright ©2019 All rights reserved @KhalilSLEIMI-aka-CrazyDEVELOPER</div>
+			</section>
+		</footer>
+
+		<!-- Scripts -->
+		<script src="assets/js/animate.js"></script>
+
+	</body>
+</html>
